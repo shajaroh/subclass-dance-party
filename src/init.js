@@ -1,6 +1,5 @@
 $(document).ready(function() {
   window.dancers = [];
-console.log(window.dancers);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -31,8 +30,31 @@ console.log(window.dancers);
       Math.random() * 1000
     );
 
-    var dancer2 = new dancerMakerFunction($('body').height(), $('body').width(), 1000);
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+
   });
+
+  $('.lineUpButton').on('click', function(event) {
+    var top = 400;
+    var left = 50;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp(top, left);
+      left += 200;
+    }
+  });
+
+  $('.danceOff').on('click', function(event) {
+    // var top = 400;
+    // var left = 50;
+    var len = window.dancers.length;
+    var mainDancer = window.dancers[Math.floor(Math.random() * len)];
+    // var dancer2 = window.dancers[Math.floor(Math.random() * len)];
+    // for (var i = 0; i < window.dancers.length; i++) {
+    //   window.dancers[i].lineUp(top, left);
+    //   left += 200;
+    // }
+  });
+
 });
 

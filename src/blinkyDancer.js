@@ -21,7 +21,7 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.oldStep = makeBlinkyDancer.prototype.step;
- 
+  this.$node.html('<img id="jellyfish" src="jellyfish.gif" />');  
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
@@ -32,4 +32,8 @@ makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this, this.timeBetweenSteps);
 
   this.$node.toggle();
+};
+
+makeBlinkyDancer.prototype.lineUp = function(top, left) {
+  this.setPosition(top, left); 
 };

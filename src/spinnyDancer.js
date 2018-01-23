@@ -11,7 +11,11 @@ makeSpinnyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this, this.timeBetweenSteps);
 
   // this.$node.fadeOut();
-  this.$node.slideToggle();
+  //this.$node.slideToggle();
+  this.$node.animate({
+    'margin-top': '50px'}, 'slow').animate({
+    'margin-top': '-50px'
+  }, 'fast');
 };
 
 // makeSpinnyDancer.prototype.lineUp = function() {
