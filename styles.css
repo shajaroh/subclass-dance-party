@@ -31,7 +31,3 @@ body, a:link, a:visited, a:active{
 .dancer{
   position:absolute;
 }
-
-.dancer:hover{
-  background: url('anotherRainbow.jpeg');
-}

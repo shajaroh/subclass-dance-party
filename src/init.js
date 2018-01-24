@@ -45,8 +45,6 @@ $(document).ready(function() {
   });
 
   $('.danceOff').on('click', function(event) {
-    // var top = 400;
-    // var left = 50;
     var len = window.dancers.length;
     var mainDancer1 = window.dancers[Math.floor(Math.random() * len)];
     var mainDancer2 = window.dancers[Math.floor(Math.random() * len)];
@@ -54,13 +52,13 @@ $(document).ready(function() {
     mainDancer1.setPosition(400, 400);
     mainDancer2.setPosition(400, 400);
     
-    
-    // var dancer2 = window.dancers[Math.floor(Math.random() * len)];
-    // for (var i = 0; i < window.dancers.length; i++) {
-    //   window.dancers[i].lineUp(top, left);
-    //   left += 200;
-    // }
   });
 
+  $(document).on('mouseover', '.dancer', function(event) {
+    $(this).animate({
+      'margin-left': '+=1000px'}, 'slow').animate({
+      'margin-left': '-=1000px'
+    }, 'slow');
+  });
 });
 
