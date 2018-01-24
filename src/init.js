@@ -48,7 +48,13 @@ $(document).ready(function() {
     // var top = 400;
     // var left = 50;
     var len = window.dancers.length;
-    var mainDancer = window.dancers[Math.floor(Math.random() * len)];
+    var mainDancer1 = window.dancers[Math.floor(Math.random() * len)];
+    var mainDancer2 = window.dancers[Math.floor(Math.random() * len)];
+    
+    mainDancer1.setPosition(400, 400);
+    mainDancer2.setPosition(400, 400);
+    
+    
     // var dancer2 = window.dancers[Math.floor(Math.random() * len)];
     // for (var i = 0; i < window.dancers.length; i++) {
     //   window.dancers[i].lineUp(top, left);
